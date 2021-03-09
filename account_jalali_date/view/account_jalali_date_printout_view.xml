@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <template id="account_jalali_date" inherit_id="account.report_invoice_document">
+            <xpath expr="//p[@t-field='o.invoice_date']" position="replace">
+                <p t-esc="o.convert_jalali(o)"/>
+            </xpath>
+            <xpath expr="//p[@t-field='o.invoice_date_due']" position="replace">
+                <p t-esc="o.convert_jalali_Due(o)"/>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

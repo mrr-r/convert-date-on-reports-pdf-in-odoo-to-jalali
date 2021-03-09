@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="sale_jalali_date" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//p[@t-field='doc.date_order']" position="replace">
+                <p t-esc="doc.convert_jalali(doc)"/>
+            </xpath>
+			<xpath expr="//p[@t-field='doc.date_order']" position="replace">
+                <p t-esc="doc.convert_jalali_q(doc)" t-esc-options='{"widget": "quot"}'/>
+            </xpath>
+			<xpath expr="//p[@t-field='doc.validity_date']" position="replace">
+                <p t-esc="doc.convert_jalali_val(doc)"/>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>
